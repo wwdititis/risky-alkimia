@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Risky Alkimia"
-run/main_scene="uid://cumv2b0olrqdn"
+run/main_scene="uid://cjdgcdaeet0w8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [rendering]
