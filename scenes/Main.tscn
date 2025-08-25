@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjdgcdaeet0w8"]
+
+[ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://scenes/dice_roll.tscn" id="1_elqb8"]
+
+[sub_resource type="GDScript" id="GDScript_rvslj"]
+script/source = "extends Node2D
+
+@onready var score: Label = $CanvasLayer/HBoxContainer/Score
+
+var NumScore = 0
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_score_pressed() -> void:
+	NumScore += 1
+	score.text = str(NumScore)
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvslj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bbpv"]
+bg_color = Color(0.730304, 0.254592, 0.414345, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rarhs"]
+bg_color = Color(0.76, 0.3724, 0.5016, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcsgt"]
+bg_color = Color(0.82, 0.4346, 0.498833, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_rvslj")
+
+[node name="btnScore" type="Button" parent="."]
+offset_left = 199.0
+offset_top = 381.0
+offset_right = 441.0
+offset_bottom = 465.0
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rvslj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0bbpv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rarhs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vcsgt")
+text = "Score!"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 576.0
+offset_right = 323.0
+offset_bottom = 665.0
+
+[node name="LbScore" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SCORE"
+
+[node name="LbColon" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = ":"
+
+[node name="Score" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="Dice_roll" parent="." instance=ExtResource("1_elqb8")]
+position = Vector2(698, 437)
+
+[connection signal="pressed" from="btnScore" to="." method="_on_score_pressed"]
