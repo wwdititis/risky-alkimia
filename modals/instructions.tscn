@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c25feehqngx4r"]
+[gd_scene load_steps=6 format=3 uid="uid://c25feehqngx4r"]
 
 [ext_resource type="Script" uid="uid://dkqv63re8g6dy" path="res://scripts/instructions.gd" id="1_5hbuq"]
-[ext_resource type="Texture2D" uid="uid://bb7auatoby7jc" path="res://assets/closeBtn.png" id="2_jqeeg"]
+[ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_5hbuq"]
+[ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_vqgf5"]
+[ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_a4gre"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bso8b"]
 bg_color = Color(1, 0.656186, 0.652817, 1)
@@ -55,14 +57,13 @@ text = "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 fit_content = true
 scroll_active = false
 
-[node name="BtnClose" type="TextureButton" parent="CanvasLayer"]
-offset_left = 777.0
-offset_top = 423.0
-offset_right = 817.0
-offset_bottom = 466.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("2_jqeeg")
-ignore_texture_size = true
-stretch_mode = 0
+[node name="btnClose" parent="CanvasLayer" instance=ExtResource("2_5hbuq")]
+offset_left = 76.0
+offset_top = 105.0
+offset_right = 222.0
+offset_bottom = 137.0
+text = "Close"
+hover_sound = ExtResource("3_vqgf5")
+click_sound = ExtResource("4_a4gre")
 
-[connection signal="pressed" from="CanvasLayer/BtnClose" to="." method="_on_btnClose_pressed"]
+[connection signal="pressed" from="CanvasLayer/btnClose" to="." method="_on_btnClose_pressed"]
