@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ofuvk3iu7rai"]
+
+[ext_resource type="Script" uid="uid://k1a2yjqec2mn" path="res://scripts/Sfx_buttons.gd" id="1_al0d5"]
+
+[node name="Button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -16.0
+offset_right = 73.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "Button"
+script = ExtResource("1_al0d5")
