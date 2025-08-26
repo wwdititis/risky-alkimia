@@ -1,5 +1,6 @@
 extends Control
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,17 +10,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_start_pressed() -> void:
+func _on_btnstart_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
-func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options.tscn")
+func _on_btnsettings_pressed() -> void:
+	add_child(Globals.Settings.instantiate())
+	
 
-func _on_quit_pressed() -> void:
+func _on_btnquit_pressed() -> void:
 	get_tree().quit()
-
-func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/StartMenu.tscn")
-	
-	

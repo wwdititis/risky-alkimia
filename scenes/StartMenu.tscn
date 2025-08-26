@@ -1,68 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cumv2b0olrqdn"]
+[gd_scene load_steps=4 format=3 uid="uid://cumv2b0olrqdn"]
 
-[ext_resource type="Script" uid="uid://rqaovdwmn4dq" path="res://scripts/Menu.gd" id="1_cp7se"]
-[ext_resource type="Texture2D" uid="uid://c2a2d0jm7gjmm" path="res://assets/exit/Exit0.png" id="3_frkif"]
-[ext_resource type="FontFile" uid="uid://cdj8gmjvee8g4" path="res://assets/Lightzone.ttf" id="3_kcs48"]
-[ext_resource type="Texture2D" uid="uid://du0sma10mkt58" path="res://assets/exit/Exit1.png" id="4_sf8pk"]
-[ext_resource type="Texture2D" uid="uid://bqtl3k6xi5nl0" path="res://assets/exit/Exit2.png" id="5_j6af4"]
-[ext_resource type="Texture2D" uid="uid://dnl6c4tl4g3cw" path="res://assets/exit/Exit3.png" id="6_xbxv1"]
-[ext_resource type="Texture2D" uid="uid://bfgxrg56i843h" path="res://assets/exit/Exit4.png" id="7_6qyeu"]
-[ext_resource type="Texture2D" uid="uid://c72ew7xh53sw" path="res://assets/exit/Exit5.png" id="8_bdxd2"]
+[ext_resource type="Script" uid="uid://bjeh4trriqrwk" path="res://scripts/StartMenu.gd" id="1_cp7se"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekxnf"]
+[sub_resource type="ImageTexture" id="ImageTexture_fb70i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
-bg_color = Color(0.730304, 0.254592, 0.414345, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
-bg_color = Color(0.76, 0.3724, 0.5016, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
-bg_color = Color(0.82, 0.4346, 0.498833, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_frkif"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_frkif")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_sf8pk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_j6af4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_xbxv1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_6qyeu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_bdxd2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Theme" id="Theme_fb70i"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -86,64 +28,97 @@ grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("3_kcs48")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
 text = "GAME NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="btnStart" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 447.0
+offset_top = 323.0
+offset_right = 693.0
+offset_bottom = 368.0
+mouse_default_cursor_shape = 2
+texture_hover = SubResource("ImageTexture_fb70i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="start" type="Label" parent="btnStart"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -107.0
-offset_top = -73.0
-offset_right = 139.0
-offset_bottom = 125.0
+offset_left = -54.5
+offset_top = -14.0
+offset_right = 54.5
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_font_sizes/font_size = 20
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="btnStart" type="Button" parent="VBoxContainer"]
+[node name="btnSettings" type="TextureButton" parent="."]
 layout_mode = 2
-size_flags_vertical = 3
+offset_left = 441.0
+offset_top = 407.0
+offset_right = 687.0
+offset_bottom = 446.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
-text = "Start game"
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="btnOptions" type="Button" parent="VBoxContainer"]
+[node name="settings" type="Label" parent="btnSettings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -14.0
+offset_right = 39.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnQuit" type="TextureButton" parent="."]
 layout_mode = 2
-size_flags_vertical = 3
+offset_left = 438.0
+offset_top = 500.0
+offset_right = 684.0
+offset_bottom = 545.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ekxnf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
-theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
-text = "Options"
+theme = SubResource("Theme_fb70i")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="btnQuit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_default_cursor_shape = 2
-text = "Quit"
+[node name="quit" type="Label" parent="btnQuit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -14.0
+offset_right = 52.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Quit Game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="exit" type="AnimatedSprite2D" parent="VBoxContainer"]
-position = Vector2(127.875, 189)
-scale = Vector2(1.1475, 0.7375)
-sprite_frames = SubResource("SpriteFrames_frkif")
-autoplay = "default"
-frame_progress = 0.259839
-
-[connection signal="pressed" from="VBoxContainer/btnStart" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/btnOptions" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/btnQuit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="btnStart" to="." method="_on_btnstart_pressed"]
+[connection signal="pressed" from="btnSettings" to="." method="_on_btnsettings_pressed"]
+[connection signal="pressed" from="btnQuit" to="." method="_on_btnquit_pressed"]

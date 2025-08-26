@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu6m7sl6cb2km"]
+
+[ext_resource type="Script" uid="uid://c0c3ellju6n7" path="res://scripts/credits.gd" id="1_2ckv8"]
+[ext_resource type="Texture2D" uid="uid://bb7auatoby7jc" path="res://assets/closeBtn.png" id="2_0ctdu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bso8b"]
+bg_color = Color(1, 0.656186, 0.652817, 1)
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_2ckv8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="darken_background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.407843)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bso8b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="LbCredits" type="Label" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Credits"
+
+[node name="credits" type="RichTextLabel" parent="CanvasLayer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+2. Aenean vel libero sollicitudin, vulputate mi lobortis, porta erat.
+3. Sed id leo sed tellus aliquam dapibus.
+4. Sed nec lacus vitae leo vehicula maximus id quis justo."
+fit_content = true
+scroll_active = false
+
+[node name="BtnClose" type="TextureButton" parent="CanvasLayer"]
+offset_left = 777.0
+offset_top = 423.0
+offset_right = 817.0
+offset_bottom = 466.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_0ctdu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/BtnClose" to="." method="_on_btnclose_pressed"]

@@ -7,6 +7,9 @@
 [sub_resource type="GDScript" id="GDScript_rvslj"]
 script/source = "extends Node2D
 
+
+var Settings = preload(\"res://scenes/Options.tscn\")
+
 @onready var score: Label = $CanvasLayer/HBoxContainer/Score
 
 var NumScore = 0
@@ -25,15 +28,11 @@ func _on_score_pressed() -> void:
 
 
 func _on_btnhowto_pressed() -> void:
-	add_child(Globals.HowTo.instantiate())
+	add_child(HowTo.instantiate())
 
 
 func _on_btnoptions_pressed() -> void:
-	add_child(Globals.Settings.instantiate())
-
-
-func _on_btncredits_pressed() -> void:
-	add_child(Globals.Credits.instantiate())
+	pass # Replace with function body.
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvslj"]
@@ -125,15 +124,6 @@ texture_normal = ExtResource("3_rarhs")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="btnCredits" type="Button" parent="."]
-offset_left = 1063.0
-offset_top = 26.0
-offset_right = 1126.0
-offset_bottom = 57.0
-mouse_default_cursor_shape = 2
-text = "Credits"
-
 [connection signal="pressed" from="btnScore" to="." method="_on_score_pressed"]
 [connection signal="pressed" from="btnHowto" to="." method="_on_btnhowto_pressed"]
 [connection signal="pressed" from="btnOptions" to="." method="_on_btnoptions_pressed"]
-[connection signal="pressed" from="btnCredits" to="." method="_on_btncredits_pressed"]

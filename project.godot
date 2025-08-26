@@ -14,6 +14,10 @@ config/name="Risky Alkimia"
 run/main_scene="uid://cjdgcdaeet0w8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+Globals="*res://scripts/globals.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
