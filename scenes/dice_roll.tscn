@@ -75,7 +75,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Dice_roll" type="Node2D"]
+[node name="dice_roll" type="Node2D"]
 script = ExtResource("1_ymbpj")
 
 [node name="roll_btn" type="Button" parent="."]
@@ -100,14 +100,14 @@ text = "Roll!"
 [node name="roll_sound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="d1" type="AnimatedSprite2D" parent="."]
-position = Vector2(-49, -107)
+position = Vector2(-70, -157)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"roll"
 frame = 4
 frame_progress = 0.338502
 
 [node name="d2" type="AnimatedSprite2D" parent="."]
-position = Vector2(67, -111)
+position = Vector2(70, -157)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"roll"
 

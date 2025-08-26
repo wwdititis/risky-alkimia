@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjdgcdaeet0w8"]
+[gd_scene load_steps=8 format=3 uid="uid://cjdgcdaeet0w8"]
 
 [ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://scenes/dice_roll.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://c25feehqngx4r" path="res://scenes/instructions.tscn" id="2_rvslj"]
 
 [sub_resource type="GDScript" id="GDScript_rvslj"]
 script/source = "extends Node2D
@@ -74,25 +75,24 @@ text = "Score!"
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 9.0
 offset_top = 576.0
-offset_right = 323.0
+offset_right = 245.0
 offset_bottom = 665.0
+theme_override_constants/separation = 20
 
 [node name="LbScore" type="Label" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "SCORE"
 
-[node name="LbColon" type="Label" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = ":"
-
 [node name="Score" type="Label" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "0"
 
-[node name="Dice_roll" parent="." instance=ExtResource("1_elqb8")]
+[node name="dice_roll" parent="." instance=ExtResource("1_elqb8")]
 position = Vector2(698, 437)
+
+[node name="instructions" parent="." instance=ExtResource("2_rvslj")]
+position = Vector2(295, 222)
 
 [connection signal="pressed" from="btnScore" to="." method="_on_score_pressed"]
