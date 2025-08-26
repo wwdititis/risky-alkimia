@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://v7rhcxiyyhxu"]
+[gd_scene load_steps=5 format=3 uid="uid://chdkgw3padl1f"]
 
-[ext_resource type="PackedScene" uid="uid://d4gu5hbgepdv6" path="res://leen's/Lscenes/draggable.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cfg7sggntwh4v" path="res://leen's/Lscenes/draggable.tscn" id="1_aahsf"]
+[ext_resource type="PackedScene" uid="uid://bfmomxlufplyj" path="res://leen's/Lscenes/DropZone.tscn" id="2_hlwww"]
 
 [sub_resource type="Shader" id="Shader_sgp6g"]
 code = "shader_type canvas_item;
@@ -102,5 +103,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="draggable" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(874, 402)
+[node name="Draggable" parent="." instance=ExtResource("1_aahsf")]
+position = Vector2(938, 259)
+
+[node name="DropZone" parent="." instance=ExtResource("2_hlwww")]
+position = Vector2(368, 325)

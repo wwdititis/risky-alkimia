@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4gu5hbgepdv6"]
+[gd_scene load_steps=4 format=3 uid="uid://cfg7sggntwh4v"]
 
-[ext_resource type="Script" uid="uid://b58n4rujdwfd6" path="res://scripts/drag_and_drop.gd" id="1_15mg1"]
-[ext_resource type="Texture2D" uid="uid://b1slvsskxjh1q" path="res://assets/icon.svg" id="2_ahypq"]
+[ext_resource type="Script" path="res://leen's/Lscripts/drag_and_drop.gd" id="1_ggrgi"]
+[ext_resource type="Texture2D" uid="uid://cj0maignulkxd" path="res://assets/food assets/ingredients/flour.png" id="1_uincm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hd3e"]
 size = Vector2(143, 142)
 
-[node name="draggable" type="CharacterBody2D"]
+[node name="Draggable" type="CharacterBody2D"]
 input_pickable = true
-script = ExtResource("1_15mg1")
+script = ExtResource("1_ggrgi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ahypq")
+texture = ExtResource("1_uincm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
