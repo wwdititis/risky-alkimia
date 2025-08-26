@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cf1juv3eambk2"]
+[gd_scene load_steps=22 format=3 uid="uid://cf1juv3eambk2"]
 
 [ext_resource type="Script" uid="uid://b2awdyslyqqi" path="res://scripts/dice_roll.gd" id="1_ymbpj"]
 [ext_resource type="Texture2D" uid="uid://d2l5n1grpp0eq" path="res://assets/dicePink.png" id="2_dlgop"]
+[ext_resource type="AudioStream" uid="uid://bxqt1npgs25dn" path="res://assets/sfx/dice_before.wav" id="3_e121c"]
+[ext_resource type="AudioStream" uid="uid://g5yg28e8yyo8" path="res://assets/sfx/dice_after.wav" id="4_lyix6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h535k"]
 
@@ -49,6 +51,30 @@ region = Rect2(448, 0, 112, 112)
 atlas = ExtResource("2_dlgop")
 region = Rect2(560, 0, 112, 112)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdru2"]
+atlas = ExtResource("2_dlgop")
+region = Rect2(0, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pw55"]
+atlas = ExtResource("2_dlgop")
+region = Rect2(112, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e121c"]
+atlas = ExtResource("2_dlgop")
+region = Rect2(224, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyix6"]
+atlas = ExtResource("2_dlgop")
+region = Rect2(336, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6orpl"]
+atlas = ExtResource("2_dlgop")
+region = Rect2(448, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvvwh"]
+atlas = ExtResource("2_dlgop")
+region = Rect2(560, 560, 112, 112)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_w21ue"]
 animations = [{
 "frames": [{
@@ -71,8 +97,31 @@ animations = [{
 "texture": SubResource("AtlasTexture_qqx4v")
 }],
 "loop": true,
-"name": &"roll",
+"name": &"dface",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdru2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pw55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e121c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyix6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6orpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvvwh")
+}],
+"loop": true,
+"name": &"rolling",
+"speed": 50.0
 }]
 
 [node name="dice_roll" type="Node2D"]
@@ -97,18 +146,26 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_cmlki")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmlki")
 text = "Roll!"
 
-[node name="roll_sound" type="AudioStreamPlayer2D" parent="."]
-
 [node name="d1" type="AnimatedSprite2D" parent="."]
-position = Vector2(-70, -157)
+position = Vector2(-50, -157)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_w21ue")
-animation = &"roll"
-frame = 4
-frame_progress = 0.338502
+animation = &"dface"
+frame = 5
+frame_progress = 0.964357
 
 [node name="d2" type="AnimatedSprite2D" parent="."]
-position = Vector2(70, -157)
+position = Vector2(50, -157)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_w21ue")
-animation = &"roll"
+animation = &"dface"
+frame = 1
+frame_progress = 0.895247
+
+[node name="dice_before" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e121c")
+
+[node name="dice_after" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lyix6")
 
 [connection signal="pressed" from="roll_btn" to="." method="_on_roll_btn_pressed"]
