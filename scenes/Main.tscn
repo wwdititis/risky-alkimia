@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjdgcdaeet0w8"]
 
-[ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://scenes/dice_roll.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://modals/dice_roll.tscn" id="1_elqb8"]
 [ext_resource type="Texture2D" uid="uid://xnw0xs3sr6w4" path="res://assets/infoBtn.png" id="3_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://ml34s0vegfom" path="res://assets/settings.png" id="3_rarhs"]
 

@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://0wwg6eib7xl5"]
+
+[ext_resource type="Script" uid="uid://dlwvhykivmj3t" path="res://scripts/settings.gd" id="1_045rw"]
+[ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/Sfx_buttons.tscn" id="2_4tasr"]
+[ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_6my2y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbmmp"]
+bg_color = Color(1, 0.654902, 0.65098, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_045rw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="darken_background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_rbmmp")
+
+[node name="LbSettings" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderMusic" type="HSlider" parent="CanvasLayer"]
+offset_left = 380.0
+offset_top = 269.0
+offset_right = 569.0
+offset_bottom = 314.0
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="LbMusic" type="Label" parent="CanvasLayer"]
+offset_left = 625.0
+offset_top = 279.0
+offset_right = 671.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Music"
+
+[node name="SliderSfx" type="HSlider" parent="CanvasLayer"]
+offset_left = 380.0
+offset_top = 313.0
+offset_right = 569.0
+offset_bottom = 358.0
+pivot_offset = Vector2(174, 121)
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="LbSfx" type="Label" parent="CanvasLayer"]
+offset_left = 625.0
+offset_top = 322.0
+offset_right = 731.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sound Effects"
+
+[node name="btnClose" parent="CanvasLayer" instance=ExtResource("2_4tasr")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 691.0
+offset_top = 421.0
+offset_right = 809.0
+offset_bottom = 454.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "Close"
+hover_sound = ExtResource("3_6my2y")
+
+[connection signal="value_changed" from="CanvasLayer/SliderMusic" to="." method="_on_slidermusic_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/SliderSfx" to="." method="_on_slidersfx_value_changed"]
+[connection signal="pressed" from="CanvasLayer/btnClose" to="." method="_on_btnclose_pressed"]

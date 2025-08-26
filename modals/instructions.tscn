@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://c25feehqngx4r"]
 
-[ext_resource type="Texture2D" uid="uid://bb7auatoby7jc" path="res://assets/closeBtn.png" id="1_dkfqi"]
-[ext_resource type="Script" uid="uid://dkqv63re8g6dy" path="res://scripts/instructions.gd" id="2_nisbi"]
+[ext_resource type="Script" uid="uid://dkqv63re8g6dy" path="res://scripts/instructions.gd" id="1_5hbuq"]
+[ext_resource type="Texture2D" uid="uid://bb7auatoby7jc" path="res://assets/closeBtn.png" id="2_jqeeg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bso8b"]
 bg_color = Color(1, 0.656186, 0.652817, 1)
 
 [node name="instructions" type="Node2D"]
-script = ExtResource("2_nisbi")
+script = ExtResource("1_5hbuq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -61,7 +61,7 @@ offset_top = 423.0
 offset_right = 817.0
 offset_bottom = 466.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_dkfqi")
+texture_normal = ExtResource("2_jqeeg")
 ignore_texture_size = true
 stretch_mode = 0
 
