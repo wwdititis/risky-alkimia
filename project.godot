@@ -18,6 +18,17 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 Globals="*res://scripts/globals.gd"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "pink",
+"res://assets/food assets/": "gray",
+"res://leen's/": "purple",
+"res://modals/": "green",
+"res://scenes/": "red",
+"res://scripts/": "yellow"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
