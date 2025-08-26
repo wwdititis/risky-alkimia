@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://0wwg6eib7xl5"]
+[gd_scene load_steps=6 format=3 uid="uid://0wwg6eib7xl5"]
 
 [ext_resource type="Script" uid="uid://dlwvhykivmj3t" path="res://scripts/settings.gd" id="1_045rw"]
 [ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_4tasr"]
 [ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_6my2y"]
+[ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_4tasr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbmmp"]
 bg_color = Color(1, 0.654902, 0.65098, 1)
@@ -85,7 +86,7 @@ offset_bottom = 350.0
 pivot_offset = Vector2(174, 121)
 max_value = 0.1
 step = 0.001
-value = 0.03
+value = 0.05
 
 [node name="percentage" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 649.0
@@ -102,7 +103,7 @@ text = "5%"
 [node name="LbSfx" type="Label" parent="CanvasLayer/percentage"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "30%"
+text = "50%"
 
 [node name="btnClose" parent="CanvasLayer" instance=ExtResource("2_4tasr")]
 anchors_preset = 0
@@ -118,6 +119,7 @@ grow_horizontal = 1
 grow_vertical = 1
 text = "Close"
 hover_sound = ExtResource("3_6my2y")
+click_sound = ExtResource("4_4tasr")
 
 [connection signal="value_changed" from="CanvasLayer/SliderMusic" to="." method="_on_slidermusic_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/SliderSfx" to="." method="_on_slidersfx_value_changed"]

@@ -164,8 +164,10 @@ frame_progress = 0.895247
 
 [node name="dice_before" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e121c")
+bus = &"SFX"
 
 [node name="dice_after" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lyix6")
+bus = &"SFX"
 
 [connection signal="pressed" from="roll_btn" to="." method="_on_roll_btn_pressed"]

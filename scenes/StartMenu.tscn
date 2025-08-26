@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cumv2b0olrqdn"]
+[gd_scene load_steps=5 format=3 uid="uid://cumv2b0olrqdn"]
 
 [ext_resource type="Script" uid="uid://bjeh4trriqrwk" path="res://scripts/StartMenu.gd" id="1_cp7se"]
 [ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_fgoeh"]
 [ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_kcs48"]
+[ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_fgoeh"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -39,6 +40,7 @@ offset_right = 77.0
 offset_bottom = 125.0
 text = "Quit Game"
 hover_sound = ExtResource("3_kcs48")
+click_sound = ExtResource("4_fgoeh")
 
 [node name="btnSettings" parent="." instance=ExtResource("2_fgoeh")]
 layout_mode = 1
@@ -48,6 +50,7 @@ offset_right = 74.0
 offset_bottom = 73.0
 text = "Settings"
 hover_sound = ExtResource("3_kcs48")
+click_sound = ExtResource("4_fgoeh")
 
 [node name="btnStartGame" parent="." instance=ExtResource("2_fgoeh")]
 layout_mode = 1
@@ -55,6 +58,7 @@ offset_top = -12.0
 offset_bottom = 20.0
 text = "Start Game"
 hover_sound = ExtResource("3_kcs48")
+click_sound = ExtResource("4_fgoeh")
 
 [connection signal="pressed" from="btnQuit" to="." method="_on_btnquit_pressed"]
 [connection signal="pressed" from="btnSettings" to="." method="_on_btnsettings_pressed"]

@@ -14,11 +14,12 @@ var bgmusic:= preload("res://assets/sfx/MysticForest.ogg")
 @onready var bgPlayer := AudioStreamPlayer.new()
 
 # Default volumes
-var sfx_volume := 0.03
+var sfx_volume := 0.05
 var bg_volume := 0.005
 
+var RollResult = 0
+
 func _ready():
-	print(sfx_volume)
 	add_child(sfxPlayer)
 	sfxPlayer.bus = "SFX"
 	set_sfx_volume(sfx_volume)

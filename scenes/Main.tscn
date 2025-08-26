@@ -133,6 +133,15 @@ offset_bottom = 57.0
 mouse_default_cursor_shape = 2
 text = "Credits"
 
+[node name="LbResult" type="Label" parent="."]
+offset_left = 634.0
+offset_top = 184.0
+offset_right = 748.0
+offset_bottom = 215.0
+text = "Results"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="btnScore" to="." method="_on_score_pressed"]
 [connection signal="pressed" from="btnHowto" to="." method="_on_btnhowto_pressed"]
 [connection signal="pressed" from="btnOptions" to="." method="_on_btnoptions_pressed"]
