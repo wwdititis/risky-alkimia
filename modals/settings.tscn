@@ -53,39 +53,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SliderMusic" type="HSlider" parent="CanvasLayer"]
-offset_left = 380.0
-offset_top = 269.0
-offset_right = 569.0
-offset_bottom = 314.0
-max_value = 1.0
+offset_left = 439.0
+offset_top = 273.0
+offset_right = 628.0
+offset_bottom = 318.0
+max_value = 0.1
 step = 0.001
-value = 0.5
-
-[node name="LbMusic" type="Label" parent="CanvasLayer"]
-offset_left = 625.0
-offset_top = 279.0
-offset_right = 671.0
-offset_bottom = 302.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Music"
+value = 0.005
 
 [node name="SliderSfx" type="HSlider" parent="CanvasLayer"]
-offset_left = 380.0
-offset_top = 313.0
-offset_right = 569.0
-offset_bottom = 358.0
+offset_left = 442.0
+offset_top = 305.0
+offset_right = 631.0
+offset_bottom = 350.0
 pivot_offset = Vector2(174, 121)
 max_value = 1.0
 step = 0.001
-value = 0.5
-
-[node name="LbSfx" type="Label" parent="CanvasLayer"]
-offset_left = 625.0
-offset_top = 322.0
-offset_right = 731.0
-offset_bottom = 345.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Sound Effects"
+value = 0.3
 
 [node name="btnClose" parent="CanvasLayer" instance=ExtResource("2_4tasr")]
 anchors_preset = 0
@@ -101,6 +85,39 @@ grow_horizontal = 1
 grow_vertical = 1
 text = "Close"
 hover_sound = ExtResource("3_6my2y")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 356.0
+offset_top = 283.0
+offset_right = 408.0
+offset_bottom = 333.0
+
+[node name="LbMusic" type="Label" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Music"
+
+[node name="LbSfx" type="Label" parent="CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Effects"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 649.0
+offset_top = 287.0
+offset_right = 682.0
+offset_bottom = 337.0
+alignment = 1
+
+[node name="LbSfxPct" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "30%"
+
+[node name="LbMusicPct" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "5%"
 
 [connection signal="value_changed" from="CanvasLayer/SliderMusic" to="." method="_on_slidermusic_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/SliderSfx" to="." method="_on_slidersfx_value_changed"]

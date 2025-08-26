@@ -16,7 +16,6 @@ func _on_btnstartgame_pressed() -> void:
 
 func _on_btnsettings_pressed() -> void:
 	add_child(Globals.Settings.instantiate())
-	
 
 func _on_btnquit_pressed() -> void:
 	get_tree().quit()
