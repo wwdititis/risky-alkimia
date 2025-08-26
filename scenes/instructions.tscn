@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c25feehqngx4r"]
+[gd_scene load_steps=4 format=3 uid="uid://c25feehqngx4r"]
+
+[ext_resource type="Texture2D" uid="uid://bb7auatoby7jc" path="res://assets/closeBtn.png" id="1_dkfqi"]
+[ext_resource type="Script" uid="uid://dkqv63re8g6dy" path="res://scripts/instructions.gd" id="2_nisbi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bso8b"]
 bg_color = Color(1, 0.656186, 0.652817, 1)
 
 [node name="instructions" type="Node2D"]
+script = ExtResource("2_nisbi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -50,3 +54,15 @@ text = "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 4. Sed nec lacus vitae leo vehicula maximus id quis justo."
 fit_content = true
 scroll_active = false
+
+[node name="BtnClose" type="TextureButton" parent="CanvasLayer"]
+offset_left = 777.0
+offset_top = 423.0
+offset_right = 817.0
+offset_bottom = 466.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_dkfqi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/BtnClose" to="." method="_on_btnClose_pressed"]

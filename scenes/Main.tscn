@@ -1,11 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cjdgcdaeet0w8"]
 
 [ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://scenes/dice_roll.tscn" id="1_elqb8"]
-[ext_resource type="PackedScene" uid="uid://c25feehqngx4r" path="res://scenes/instructions.tscn" id="2_rvslj"]
+[ext_resource type="Texture2D" uid="uid://xnw0xs3sr6w4" path="res://assets/infoBtn.png" id="3_0bbpv"]
 
 [sub_resource type="GDScript" id="GDScript_rvslj"]
 script/source = "extends Node2D
 
+var HowTo = preload(\"res://scenes/instructions.tscn\")
 @onready var score: Label = $CanvasLayer/HBoxContainer/Score
 
 var NumScore = 0
@@ -21,6 +22,10 @@ func _process(delta: float) -> void:
 func _on_score_pressed() -> void:
 	NumScore += 1
 	score.text = str(NumScore)
+
+
+func _on_btnhowto_pressed() -> void:
+	add_child(HowTo.instantiate())
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvslj"]
@@ -92,7 +97,15 @@ text = "0"
 [node name="dice_roll" parent="." instance=ExtResource("1_elqb8")]
 position = Vector2(698, 437)
 
-[node name="instructions" parent="." instance=ExtResource("2_rvslj")]
-position = Vector2(295, 222)
+[node name="btnHowto" type="TextureButton" parent="."]
+offset_left = 1006.0
+offset_top = 531.0
+offset_right = 1102.0
+offset_bottom = 613.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_0bbpv")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="btnScore" to="." method="_on_score_pressed"]
+[connection signal="pressed" from="btnHowto" to="." method="_on_btnhowto_pressed"]
