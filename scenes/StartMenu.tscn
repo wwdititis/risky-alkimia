@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cumv2b0olrqdn"]
 
 [ext_resource type="Script" uid="uid://bjeh4trriqrwk" path="res://scripts/StartMenu.gd" id="1_cp7se"]
-[ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/Sfx_buttons.tscn" id="2_fgoeh"]
+[ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_fgoeh"]
 [ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_kcs48"]
 [ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_fgoeh"]
 
