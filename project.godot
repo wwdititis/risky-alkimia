@@ -28,9 +28,9 @@ window/size/viewport_height=720
 folder_colors={
 "res://assets/": "pink",
 "res://assets/food assets/": "gray",
+"res://assets/sfx/": "teal",
 "res://leen's/": "purple",
 "res://modals/": "green",
-"res://music&sfx/": "teal",
 "res://scenes/": "red",
 "res://scripts/": "yellow"
 }

@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://cf1juv3eambk2"]
 
 [ext_resource type="Script" uid="uid://b2awdyslyqqi" path="res://scripts/dice_roll.gd" id="1_ymbpj"]
-[ext_resource type="Texture2D" uid="uid://d2l5n1grpp0eq" path="res://assets/dicePink.png" id="2_dlgop"]
+[ext_resource type="Texture2D" uid="uid://kmkeurjarc7x" path="res://assets/sprites/dicePink.png" id="2_dlgop"]
 [ext_resource type="AudioStream" uid="uid://bxqt1npgs25dn" path="res://assets/sfx/dice_before.wav" id="3_e121c"]
 [ext_resource type="AudioStream" uid="uid://g5yg28e8yyo8" path="res://assets/sfx/dice_after.wav" id="4_lyix6"]
 
@@ -151,8 +151,6 @@ position = Vector2(-50, -157)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"dface"
-frame = 5
-frame_progress = 0.964357
 
 [node name="d2" type="AnimatedSprite2D" parent="."]
 position = Vector2(50, -157)
