@@ -1,9 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://cumv2b0olrqdn"]
+[gd_scene load_steps=15 format=3 uid="uid://cumv2b0olrqdn"]
 
 [ext_resource type="Script" uid="uid://bjeh4trriqrwk" path="res://scripts/StartMenu.gd" id="1_cp7se"]
+[ext_resource type="PackedScene" uid="uid://bsj1kh6pihpak" path="res://modals/balatro_bg.tscn" id="2_aso40"]
 [ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_fgoeh"]
+[ext_resource type="Texture2D" uid="uid://bxap6l8u46w5k" path="res://assets/UI/menu.png" id="3_frkif"]
 [ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_kcs48"]
 [ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_fgoeh"]
+[ext_resource type="Texture2D" uid="uid://drffam2f73au" path="res://assets/UI/buttons/btnStartMenuHover2.png" id="5_xbxv1"]
+[ext_resource type="Texture2D" uid="uid://dpobsoovgpjjd" path="res://assets/UI/buttons/btnStartMenu.png" id="6_cuvp2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xbxv1"]
+texture = ExtResource("5_xbxv1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sf8pk"]
+texture = ExtResource("6_cuvp2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6qyeu"]
+texture = ExtResource("5_xbxv1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cuvp2"]
+texture = ExtResource("6_cuvp2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6af4"]
+texture = ExtResource("5_xbxv1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frkif"]
+texture = ExtResource("6_cuvp2")
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -14,15 +36,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cp7se")
 
+[node name="balatroBg" parent="." instance=ExtResource("2_aso40")]
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_frkif")
+stretch_mode = 3
+
 [node name="game_name" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -286.0
-offset_top = 134.0
-offset_right = 293.0
-offset_bottom = 217.0
+offset_left = -285.0
+offset_top = 218.0
+offset_right = 294.0
+offset_bottom = 301.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
@@ -32,34 +73,45 @@ text = "GAME NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="btnQuit" parent="." instance=ExtResource("2_fgoeh")]
+[node name="btnStartGame" parent="." instance=ExtResource("2_fgoeh")]
 layout_mode = 1
-offset_left = -69.0
-offset_top = 93.0
-offset_right = 77.0
-offset_bottom = 125.0
-text = "Quit Game"
+offset_left = -100.0
+offset_top = -46.0
+offset_right = 100.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0.407843, 0.286275, 0.239216, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_xbxv1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sf8pk")
+text = "Start Game"
 hover_sound = ExtResource("3_kcs48")
 click_sound = ExtResource("4_fgoeh")
 
 [node name="btnSettings" parent="." instance=ExtResource("2_fgoeh")]
 layout_mode = 1
-offset_left = -72.0
-offset_top = 41.0
-offset_right = 74.0
-offset_bottom = 73.0
+offset_left = -100.0
+offset_top = 17.0
+offset_right = 100.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.407843, 0.286275, 0.239216, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_6qyeu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_cuvp2")
 text = "Settings"
 hover_sound = ExtResource("3_kcs48")
 click_sound = ExtResource("4_fgoeh")
 
-[node name="btnStartGame" parent="." instance=ExtResource("2_fgoeh")]
+[node name="btnQuit" parent="." instance=ExtResource("2_fgoeh")]
 layout_mode = 1
-offset_top = -12.0
-offset_bottom = 20.0
-text = "Start Game"
+offset_left = -100.0
+offset_top = 80.0
+offset_right = 100.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0.407058, 0.285595, 0.237351, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_j6af4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_frkif")
+text = "Quit Game"
 hover_sound = ExtResource("3_kcs48")
 click_sound = ExtResource("4_fgoeh")
 
-[connection signal="pressed" from="btnQuit" to="." method="_on_btnquit_pressed"]
-[connection signal="pressed" from="btnSettings" to="." method="_on_btnsettings_pressed"]
 [connection signal="pressed" from="btnStartGame" to="." method="_on_btnstartgame_pressed"]
+[connection signal="pressed" from="btnSettings" to="." method="_on_btnsettings_pressed"]
+[connection signal="pressed" from="btnQuit" to="." method="_on_btnquit_pressed"]

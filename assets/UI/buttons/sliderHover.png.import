@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://widtxpepkhlj"
-path="res://.godot/imported/btnCloseHover.png-a25f51439b45854a194fc520d87738f0.ctex"
+uid="uid://c2oq32a76q8hx"
+path="res://.godot/imported/sliderHover.png-ac1f68e9251fb83a37f4a7812e63f12e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/btnCloseHover.png"
-dest_files=["res://.godot/imported/btnCloseHover.png-a25f51439b45854a194fc520d87738f0.ctex"]
+source_file="res://assets/UI/buttons/sliderHover.png"
+dest_files=["res://.godot/imported/sliderHover.png-ac1f68e9251fb83a37f4a7812e63f12e.ctex"]
 
 [params]
 

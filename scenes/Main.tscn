@@ -128,8 +128,8 @@ stretch_mode = 0
 [node name="btnCredits" type="Button" parent="."]
 offset_left = 1063.0
 offset_top = 26.0
-offset_right = 1126.0
-offset_bottom = 57.0
+offset_right = 1105.0
+offset_bottom = 67.0
 mouse_default_cursor_shape = 2
 text = "Credits"
 
