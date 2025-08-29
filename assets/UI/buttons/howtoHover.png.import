@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjta5jo25jxd"
-path="res://.godot/imported/btnClose.png-4086657ea8a231b30a692b090922ebf4.ctex"
+uid="uid://bjme4wi42w5ey"
+path="res://.godot/imported/howtoHover.png-2a6b2d9384618949acd43680603d45bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/buttons/btnClose.png"
-dest_files=["res://.godot/imported/btnClose.png-4086657ea8a231b30a692b090922ebf4.ctex"]
+source_file="res://assets/UI/buttons/howtoHover.png"
+dest_files=["res://.godot/imported/howtoHover.png-2a6b2d9384618949acd43680603d45bd.ctex"]
 
 [params]
 

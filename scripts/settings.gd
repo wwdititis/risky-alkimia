@@ -1,7 +1,7 @@
 extends Control
 
-@onready var SliderSfx: HSlider = $CanvasLayer/SliderSfx
-@onready var SliderMusic: HSlider = $CanvasLayer/SliderMusic
+@onready var SliderSfx: HSlider = $CanvasLayer/hbox/vboxSliders/SliderSfx
+@onready var SliderMusic: HSlider = $CanvasLayer/hbox/vboxSliders/SliderMusic
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

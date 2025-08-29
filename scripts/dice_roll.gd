@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var roll_btn: Button = $roll_btn
+@onready var btnRoll: Button = $btnRoll
 @onready var d1: AnimatedSprite2D = $d1
 @onready var d2: AnimatedSprite2D = $d2
 @onready var dice_before: AudioStreamPlayer = $dice_before
@@ -13,12 +13,12 @@ func _ready() -> void:
 	randomize()
 	roll_dice(0)
 
-func _on_roll_btn_pressed() -> void:	
+func _on_btnRoll_pressed() -> void:	
 	btnpressed = true
 	dice_before.play()
-	roll_btn.disabled = true
+	btnRoll.disabled = true
 	roll_dice(0.5)		
-	roll_btn.disabled = false
+	btnRoll.disabled = false
 	
 func roll_dice(seconds):
 	d1.play("rolling")

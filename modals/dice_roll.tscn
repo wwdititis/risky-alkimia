@@ -1,115 +1,64 @@
 [gd_scene load_steps=22 format=3 uid="uid://cf1juv3eambk2"]
 
 [ext_resource type="Script" uid="uid://b2awdyslyqqi" path="res://scripts/dice_roll.gd" id="1_ymbpj"]
-[ext_resource type="Texture2D" uid="uid://d2l5n1grpp0eq" path="res://assets/sprites/dicePink.png" id="2_dlgop"]
+[ext_resource type="Texture2D" uid="uid://caurwqa1p53mv" path="res://assets/sprites/dice.png" id="2_e121c"]
 [ext_resource type="AudioStream" uid="uid://bxqt1npgs25dn" path="res://assets/sfx/dice_before.wav" id="3_e121c"]
 [ext_resource type="AudioStream" uid="uid://g5yg28e8yyo8" path="res://assets/sfx/dice_after.wav" id="4_lyix6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h535k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h535k"]
-bg_color = Color(0.799906, 0.38501, 0.563392, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 5
-shadow_offset = Vector2(2, 4)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmlki"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmlki"]
-bg_color = Color(0.799906, 0.38501, 0.563392, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 5
-shadow_offset = Vector2(2, 4)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tkppe"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(0, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2xu8"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(112, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5h02f"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(224, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7xae"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(336, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahqho"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(448, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqx4v"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(560, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vdru2"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(0, 560, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8pw55"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(112, 560, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e121c"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(224, 560, 112, 112)
+[ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="5_fvvwh"]
+[ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="6_j5u16"]
+[ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="7_hcu0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyix6"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(336, 560, 112, 112)
+atlas = ExtResource("2_e121c")
+region = Rect2(0, 0, 112, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6orpl"]
-atlas = ExtResource("2_dlgop")
-region = Rect2(448, 560, 112, 112)
+atlas = ExtResource("2_e121c")
+region = Rect2(112, 0, 112, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvvwh"]
-atlas = ExtResource("2_dlgop")
+atlas = ExtResource("2_e121c")
+region = Rect2(224, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5u16"]
+atlas = ExtResource("2_e121c")
+region = Rect2(336, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcu0n"]
+atlas = ExtResource("2_e121c")
+region = Rect2(448, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5fh7"]
+atlas = ExtResource("2_e121c")
+region = Rect2(560, 0, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho35c"]
+atlas = ExtResource("2_e121c")
+region = Rect2(0, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvaeh"]
+atlas = ExtResource("2_e121c")
+region = Rect2(112, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1whu"]
+atlas = ExtResource("2_e121c")
+region = Rect2(224, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdi7b"]
+atlas = ExtResource("2_e121c")
+region = Rect2(336, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0naf"]
+atlas = ExtResource("2_e121c")
+region = Rect2(448, 560, 112, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4od7"]
+atlas = ExtResource("2_e121c")
 region = Rect2(560, 560, 112, 112)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w21ue"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tkppe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2xu8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5h02f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r7xae")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ahqho")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qqx4v")
-}],
-"loop": true,
-"name": &"dface",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vdru2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8pw55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e121c")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lyix6")
 }, {
@@ -118,43 +67,63 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fvvwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5u16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcu0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5fh7")
+}],
+"loop": true,
+"name": &"dface",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho35c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvaeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1whu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdi7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0naf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4od7")
 }],
 "loop": true,
 "name": &"rolling",
 "speed": 50.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5fh7"]
+bg_color = Color(0.4, 0.164706, 0.227451, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="dice_roll" type="Node2D"]
 script = ExtResource("1_ymbpj")
 
-[node name="roll_btn" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = -30.5
-offset_right = 82.0
-offset_bottom = 30.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_h535k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h535k")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_cmlki")
-theme_override_styles/normal = SubResource("StyleBoxFlat_cmlki")
-text = "Roll!"
-
 [node name="d1" type="AnimatedSprite2D" parent="."]
-position = Vector2(-50, -157)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-50, -112)
+scale = Vector2(0.6995, 0.7)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"dface"
 
 [node name="d2" type="AnimatedSprite2D" parent="."]
-position = Vector2(50, -157)
-scale = Vector2(0.8, 0.8)
+position = Vector2(50, -112)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"dface"
 frame = 1
@@ -168,4 +137,11 @@ bus = &"SFX"
 stream = ExtResource("4_lyix6")
 bus = &"SFX"
 
-[connection signal="pressed" from="roll_btn" to="." method="_on_roll_btn_pressed"]
+[node name="btnRoll" parent="." instance=ExtResource("5_fvvwh")]
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.87451, 0.729412, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5fh7")
+text = "Roll!"
+hover_sound = ExtResource("6_j5u16")
+click_sound = ExtResource("7_hcu0n")
+
+[connection signal="pressed" from="btnRoll" to="." method="_on_btnRoll_pressed"]

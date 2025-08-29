@@ -1,15 +1,50 @@
-[gd_scene load_steps=17 format=3 uid="uid://0wwg6eib7xl5"]
+[gd_scene load_steps=18 format=3 uid="uid://0wwg6eib7xl5"]
 
 [ext_resource type="Script" uid="uid://dlwvhykivmj3t" path="res://scripts/settings.gd" id="1_045rw"]
 [ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_4tasr"]
-[ext_resource type="Texture2D" uid="uid://ci52l8yp8sd01" path="res://assets/UI/settingsbg.png" id="2_ba1y8"]
 [ext_resource type="FontFile" uid="uid://fujr7cby210v" path="res://assets/fonts/Tagesschrift-Regular.ttf" id="3_1m2c2"]
 [ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_6my2y"]
 [ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_4tasr"]
 [ext_resource type="Texture2D" uid="uid://cpukfs0byvgp3" path="res://assets/UI/buttons/slider.png" id="6_3cdtc"]
-[ext_resource type="Texture2D" uid="uid://c4pjrpxotwoev" path="res://assets/UI/buttons/btnCloseHover.png" id="7_1m2c2"]
 [ext_resource type="Texture2D" uid="uid://c2oq32a76q8hx" path="res://assets/UI/buttons/sliderHover.png" id="7_ba1y8"]
-[ext_resource type="Texture2D" uid="uid://cjta5jo25jxd" path="res://assets/UI/buttons/btnClose.png" id="8_0nncv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx22q"]
+bg_color = Color(0.4, 0.164706, 0.227451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1m2c2"]
+bg_color = Color(0.952941, 0.87451, 0.729412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nncv"]
+bg_color = Color(0.921569, 0.815686, 0.784314, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mab4"]
+bg_color = Color(0.843137, 0.694118, 0.694118, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a10mx"]
+bg_color = Color(0.4, 0.164706, 0.227451, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocvhw"]
+bg_color = Color(0.4, 0.164706, 0.227451, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba1y8"]
 atlas = ExtResource("6_3cdtc")
@@ -30,7 +65,6 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 shadow_color = Color(0.909804, 0.764706, 0.611765, 1)
-shadow_size = 1
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cdtc"]
@@ -38,12 +72,6 @@ bg_color = Color(0.4, 0.164706, 0.227451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ba1y8"]
 bg_color = Color(0.4, 0.164706, 0.227451, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mab4"]
-texture = ExtResource("7_1m2c2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ett3o"]
-texture = ExtResource("8_0nncv")
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -64,46 +92,110 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.635294)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="modalWindow" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -256.0
-offset_right = 400.0
-offset_bottom = 256.0
+offset_left = -267.5
+offset_top = -174.0
+offset_right = 267.5
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ba1y8")
-stretch_mode = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wx22q")
 
-[node name="LbMusic" type="Label" parent="CanvasLayer"]
-offset_left = 482.0
-offset_top = 360.0
-offset_right = 586.0
-offset_bottom = 409.0
+[node name="Border" type="MarginContainer" parent="CanvasLayer/modalWindow"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="vbox" type="VBoxContainer" parent="CanvasLayer/modalWindow/Border"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="modalTitle" type="PanelContainer" parent="CanvasLayer/modalWindow/Border/vbox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1m2c2")
+
+[node name="LbSettings" type="Label" parent="CanvasLayer/modalWindow/Border/vbox/modalTitle"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.164706, 0.227451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.419608)
+theme_override_font_sizes/font_size = 37
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="BorderColor" type="PanelContainer" parent="CanvasLayer/modalWindow/Border/vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wx22q")
+
+[node name="Contents" type="PanelContainer" parent="CanvasLayer/modalWindow/Border/vbox/BorderColor"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nncv")
+
+[node name="btnClose" parent="CanvasLayer" instance=ExtResource("2_4tasr")]
+offset_left = 206.0
+offset_top = -161.0
+offset_right = 256.0
+offset_bottom = -109.0
+tooltip_text = "Close"
+theme_override_colors/font_hover_color = Color(0.952941, 0.87451, 0.729412, 1)
+theme_override_colors/font_color = Color(0.952941, 0.87451, 0.729412, 1)
+theme_override_colors/font_pressed_color = Color(0.952941, 0.87451, 0.729412, 1)
+theme_override_fonts/font = ExtResource("3_1m2c2")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_3mab4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a10mx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ocvhw")
+text = "X"
+hover_sound = ExtResource("3_6my2y")
+click_sound = ExtResource("4_4tasr")
+
+[node name="hbox" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 440.0
+offset_top = 313.0
+offset_right = 844.0
+offset_bottom = 471.0
+alignment = 1
+
+[node name="vboxLabels" type="VBoxContainer" parent="CanvasLayer/hbox"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="LbMusic" type="Label" parent="CanvasLayer/hbox/vboxLabels"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.4, 0.164706, 0.227451, 1)
 theme_override_fonts/font = ExtResource("3_1m2c2")
 theme_override_font_sizes/font_size = 37
 text = "Music"
 
-[node name="LbSfx" type="Label" parent="CanvasLayer"]
-offset_left = 483.0
-offset_top = 423.0
-offset_right = 539.0
-offset_bottom = 472.0
+[node name="LbSfx" type="Label" parent="CanvasLayer/hbox/vboxLabels"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.164706, 0.227451, 1)
 theme_override_fonts/font = ExtResource("3_1m2c2")
 theme_override_font_sizes/font_size = 37
-text = "Sfx"
+text = "Effects"
 
-[node name="SliderMusic" type="HSlider" parent="CanvasLayer"]
-offset_left = 610.0
-offset_top = 369.0
-offset_right = 860.0
-offset_bottom = 401.0
+[node name="vboxSliders" type="VBoxContainer" parent="CanvasLayer/hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="SliderMusic" type="HSlider" parent="CanvasLayer/hbox/vboxSliders"]
+layout_mode = 2
+size_flags_vertical = 1
 mouse_default_cursor_shape = 2
 theme_override_constants/center_grabber = 1
 theme_override_icons/grabber = SubResource("AtlasTexture_ba1y8")
@@ -115,11 +207,8 @@ max_value = 0.1
 step = 0.001
 value = 0.005
 
-[node name="SliderSfx" type="HSlider" parent="CanvasLayer"]
-offset_left = 610.0
-offset_top = 432.0
-offset_right = 860.0
-offset_bottom = 464.0
+[node name="SliderSfx" type="HSlider" parent="CanvasLayer/hbox/vboxSliders"]
+layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_constants/center_grabber = 1
 theme_override_icons/grabber = SubResource("AtlasTexture_ba1y8")
@@ -131,24 +220,6 @@ max_value = 0.1
 step = 0.001
 value = 0.005
 
-[node name="btnClose" parent="CanvasLayer" instance=ExtResource("2_4tasr")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 815.0
-offset_top = 505.0
-offset_right = 927.0
-offset_bottom = 569.0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/hover = SubResource("StyleBoxTexture_3mab4")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ett3o")
-text = ""
-hover_sound = ExtResource("3_6my2y")
-click_sound = ExtResource("4_4tasr")
-
-[connection signal="value_changed" from="CanvasLayer/SliderMusic" to="." method="_on_slidermusic_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/SliderSfx" to="." method="_on_slidersfx_value_changed"]
 [connection signal="pressed" from="CanvasLayer/btnClose" to="." method="_on_btnclose_pressed"]
+[connection signal="value_changed" from="CanvasLayer/hbox/vboxSliders/SliderMusic" to="." method="_on_slidermusic_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/hbox/vboxSliders/SliderSfx" to="." method="_on_slidersfx_value_changed"]

@@ -1,11 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqo5ny2olay17"]
+[gd_scene load_steps=28 format=3 uid="uid://cqo5ny2olay17"]
 
 [ext_resource type="Shader" uid="uid://b364bevpvu156" path="res://balatro.gdshader" id="1_u3x7g"]
 [ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://modals/dice_roll.tscn" id="1_xyt4e"]
-[ext_resource type="Texture2D" uid="uid://xnw0xs3sr6w4" path="res://assets/infoBtn.png" id="2_s7260"]
-[ext_resource type="Texture2D" uid="uid://ml34s0vegfom" path="res://assets/settings.png" id="3_yp8wo"]
+[ext_resource type="Texture2D" uid="uid://ddrb8gu662smy" path="res://assets/UI/buttons/howto.png" id="3_u3x7g"]
+[ext_resource type="Texture2D" uid="uid://bjme4wi42w5ey" path="res://assets/UI/buttons/howtoHover.png" id="4_oiyxv"]
 [ext_resource type="PackedScene" uid="uid://cfg7sggntwh4v" path="res://leen's/Lscenes/draggable.tscn" id="5_oiyxv"]
 [ext_resource type="PackedScene" uid="uid://bfmomxlufplyj" path="res://leen's/Lscenes/DropZone.tscn" id="6_mdcd8"]
+[ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="8_mdcd8"]
+[ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="9_ruh5v"]
+[ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="10_10wqe"]
+[ext_resource type="Texture2D" uid="uid://bvncpywcmv2f2" path="res://assets/UI/buttons/creditsHover.png" id="10_bggjr"]
+[ext_resource type="Texture2D" uid="uid://lkx3lhxnspaf" path="res://assets/UI/buttons/credits.png" id="11_4a17v"]
+[ext_resource type="Texture2D" uid="uid://bvg7u0p8obhfw" path="res://assets/UI/buttons/settingsHover.png" id="11_bggjr"]
+[ext_resource type="Texture2D" uid="uid://dg8o1v1s553r4" path="res://assets/UI/buttons/settings.png" id="12_4a17v"]
 
 [sub_resource type="GDScript" id="GDScript_rvslj"]
 script/source = "extends Node2D
@@ -30,13 +37,11 @@ func _on_score_pressed() -> void:
 func _on_btnhowto_pressed() -> void:
 	add_child(Globals.HowTo.instantiate())
 
-
-func _on_btnoptions_pressed() -> void:
-	add_child(Globals.Settings.instantiate())
-
-
-func _on_btncredits_pressed() -> void:
+func _on_btnCredits_pressed() -> void:
 	add_child(Globals.Credits.instantiate())
+
+func _on_btnsettings_pressed() -> void:
+	add_child(Globals.Settings.instantiate())
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oiyxv"]
@@ -55,6 +60,42 @@ shader_parameter/contrast = 2.0
 shader_parameter/spin_amount = 0.36
 shader_parameter/pixel_filter = 700.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd5kv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ruh5v"]
+texture = ExtResource("4_oiyxv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bggjr"]
+texture = ExtResource("3_u3x7g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10wqe"]
+texture = ExtResource("3_u3x7g")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhuri"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4a17v"]
+texture = ExtResource("11_bggjr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3dw6s"]
+texture = ExtResource("12_4a17v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43tlv"]
+texture = ExtResource("12_4a17v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhuri"]
+texture = ExtResource("11_4a17v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhugj"]
+texture = ExtResource("10_bggjr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12mnl"]
+texture = ExtResource("11_4a17v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0apw"]
+texture = ExtResource("11_4a17v")
+
 [node name="GameLevel" type="Node2D"]
 script = SubResource("GDScript_rvslj")
 
@@ -63,36 +104,8 @@ material = SubResource("ShaderMaterial_oiyxv")
 offset_right = 1281.0
 offset_bottom = 722.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
 [node name="dice_roll" parent="." instance=ExtResource("1_xyt4e")]
 position = Vector2(849, 381)
-
-[node name="btnHowto" type="TextureButton" parent="."]
-offset_left = 112.0
-offset_right = 208.0
-offset_bottom = 82.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("2_s7260")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="btnOptions" type="TextureButton" parent="."]
-offset_left = 3.0
-offset_right = 99.0
-offset_bottom = 82.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_yp8wo")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="btnCredits" type="Button" parent="."]
-offset_left = 1202.0
-offset_top = 15.0
-offset_right = 1265.0
-offset_bottom = 46.0
-mouse_default_cursor_shape = 2
-text = "Credits"
 
 [node name="LbResult" type="Label" parent="."]
 offset_left = 789.0
@@ -110,6 +123,60 @@ position = Vector2(1138, 239)
 position = Vector2(278, 434)
 scale = Vector2(2.83, 2.83)
 
-[connection signal="pressed" from="btnHowto" to="." method="_on_btnhowto_pressed"]
-[connection signal="pressed" from="btnOptions" to="." method="_on_btnoptions_pressed"]
-[connection signal="pressed" from="btnCredits" to="." method="_on_btncredits_pressed"]
+[node name="hbox" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 42)
+offset_right = 88.0
+offset_bottom = 42.0
+
+[node name="btnHowto" parent="hbox" instance=ExtResource("8_mdcd8")]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "How to Play"
+theme_override_styles/focus = SubResource("StyleBoxFlat_xd5kv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ruh5v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bggjr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_10wqe")
+text = ""
+hover_sound = ExtResource("9_ruh5v")
+click_sound = ExtResource("10_10wqe")
+
+[node name="btnSettings" parent="hbox" instance=ExtResource("8_mdcd8")]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Settings"
+theme_override_styles/focus = SubResource("StyleBoxFlat_qhuri")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4a17v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3dw6s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_43tlv")
+text = ""
+hover_sound = ExtResource("9_ruh5v")
+click_sound = ExtResource("10_10wqe")
+
+[node name="btnCredits" parent="." instance=ExtResource("8_mdcd8")]
+custom_minimum_size = Vector2(42, 0)
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1173.0
+offset_top = -2.0
+offset_right = 1285.0
+offset_bottom = 62.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 10
+tooltip_text = "Settings"
+theme_override_styles/focus = SubResource("StyleBoxTexture_qhuri")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xhugj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_12mnl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_y0apw")
+text = ""
+hover_sound = ExtResource("9_ruh5v")
+click_sound = ExtResource("10_10wqe")
+
+[connection signal="pressed" from="hbox/btnHowto" to="." method="_on_btnhowto_pressed"]
+[connection signal="pressed" from="hbox/btnSettings" to="." method="_on_btnsettings_pressed"]
+[connection signal="pressed" from="btnCredits" to="." method="_on_btnCredits_pressed"]

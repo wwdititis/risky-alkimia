@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmxfwuvl2f4h"
-path="res://.godot/imported/howtobg.png-ba4d2269afe64b2dbd555778b9bcd35b.ctex"
+uid="uid://dg8o1v1s553r4"
+path="res://.godot/imported/settings.png-b1facd5bf11aa7dd54a814cc855b2d04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/howtobg.png"
-dest_files=["res://.godot/imported/howtobg.png-ba4d2269afe64b2dbd555778b9bcd35b.ctex"]
+source_file="res://assets/UI/buttons/settings.png"
+dest_files=["res://.godot/imported/settings.png-b1facd5bf11aa7dd54a814cc855b2d04.ctex"]
 
 [params]
 

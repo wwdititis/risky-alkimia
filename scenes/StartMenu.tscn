@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cumv2b0olrqdn"]
+[gd_scene load_steps=14 format=3 uid="uid://cumv2b0olrqdn"]
 
 [ext_resource type="Script" uid="uid://bjeh4trriqrwk" path="res://scripts/StartMenu.gd" id="1_cp7se"]
 [ext_resource type="PackedScene" uid="uid://bsj1kh6pihpak" path="res://modals/balatro_bg.tscn" id="2_aso40"]
 [ext_resource type="PackedScene" uid="uid://ofuvk3iu7rai" path="res://modals/sfx_buttons.tscn" id="2_fgoeh"]
-[ext_resource type="Texture2D" uid="uid://bxap6l8u46w5k" path="res://assets/UI/menu.png" id="3_frkif"]
 [ext_resource type="AudioStream" uid="uid://cnkfpj3eqpehn" path="res://assets/sfx/Retro1.wav" id="3_kcs48"]
 [ext_resource type="AudioStream" uid="uid://c8d10mrqgk4um" path="res://assets/sfx/African4.wav" id="4_fgoeh"]
 [ext_resource type="Texture2D" uid="uid://drffam2f73au" path="res://assets/UI/buttons/btnStartMenuHover2.png" id="5_xbxv1"]
@@ -39,31 +38,15 @@ script = ExtResource("1_cp7se")
 [node name="balatroBg" parent="." instance=ExtResource("2_aso40")]
 layout_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -300.0
-offset_right = 450.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_frkif")
-stretch_mode = 3
-
 [node name="game_name" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -285.0
-offset_top = 218.0
-offset_right = 294.0
-offset_bottom = 301.0
+offset_left = -301.0
+offset_top = 139.0
+offset_right = 278.0
+offset_bottom = 222.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
@@ -73,12 +56,26 @@ text = "GAME NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="btnStartGame" parent="." instance=ExtResource("2_fgoeh")]
+[node name="vbox" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -46.0
+offset_top = -45.5
 offset_right = 100.0
-offset_bottom = 4.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="btnStartGame" parent="vbox" instance=ExtResource("2_fgoeh")]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.407843, 0.286275, 0.239216, 1)
 theme_override_styles/hover = SubResource("StyleBoxTexture_xbxv1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_sf8pk")
@@ -86,12 +83,9 @@ text = "Start Game"
 hover_sound = ExtResource("3_kcs48")
 click_sound = ExtResource("4_fgoeh")
 
-[node name="btnSettings" parent="." instance=ExtResource("2_fgoeh")]
-layout_mode = 1
-offset_left = -100.0
-offset_top = 17.0
-offset_right = 100.0
-offset_bottom = 67.0
+[node name="btnSettings" parent="vbox" instance=ExtResource("2_fgoeh")]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.407843, 0.286275, 0.239216, 1)
 theme_override_styles/hover = SubResource("StyleBoxTexture_6qyeu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_cuvp2")
@@ -99,12 +93,9 @@ text = "Settings"
 hover_sound = ExtResource("3_kcs48")
 click_sound = ExtResource("4_fgoeh")
 
-[node name="btnQuit" parent="." instance=ExtResource("2_fgoeh")]
-layout_mode = 1
-offset_left = -100.0
-offset_top = 80.0
-offset_right = 100.0
-offset_bottom = 130.0
+[node name="btnQuit" parent="vbox" instance=ExtResource("2_fgoeh")]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.407058, 0.285595, 0.237351, 1)
 theme_override_styles/hover = SubResource("StyleBoxTexture_j6af4")
 theme_override_styles/normal = SubResource("StyleBoxTexture_frkif")
@@ -112,6 +103,6 @@ text = "Quit Game"
 hover_sound = ExtResource("3_kcs48")
 click_sound = ExtResource("4_fgoeh")
 
-[connection signal="pressed" from="btnStartGame" to="." method="_on_btnstartgame_pressed"]
-[connection signal="pressed" from="btnSettings" to="." method="_on_btnsettings_pressed"]
-[connection signal="pressed" from="btnQuit" to="." method="_on_btnquit_pressed"]
+[connection signal="pressed" from="vbox/btnStartGame" to="." method="_on_btnstartgame_pressed"]
+[connection signal="pressed" from="vbox/btnSettings" to="." method="_on_btnsettings_pressed"]
+[connection signal="pressed" from="vbox/btnQuit" to="." method="_on_btnquit_pressed"]
