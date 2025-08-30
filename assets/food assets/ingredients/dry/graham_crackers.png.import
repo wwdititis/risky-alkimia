@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8ow71jmn0map"
-path="res://.godot/imported/sugar.png-e9a539ec85741a7ba260b502a9c708d2.ctex"
+uid="uid://cajt4atnxmoe0"
+path="res://.godot/imported/graham_crackers.png-f571f039ee2e6abe3740a8b84a5ffdce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/sugar.png"
-dest_files=["res://.godot/imported/sugar.png-e9a539ec85741a7ba260b502a9c708d2.ctex"]
+source_file="res://assets/food assets/ingredients/dry/graham_crackers.png"
+dest_files=["res://.godot/imported/graham_crackers.png-f571f039ee2e6abe3740a8b84a5ffdce.ctex"]
 
 [params]
 

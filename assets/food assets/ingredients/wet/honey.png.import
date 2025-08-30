@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ucbgd1qi61t8"
-path="res://.godot/imported/peanut_butter.png-f27ef5bd914418a8d85d92abb36518ed.ctex"
+uid="uid://hrvxe4r7wvsw"
+path="res://.godot/imported/honey.png-86fab80fd389736fc881bcb79782e957.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/peanut_butter.png"
-dest_files=["res://.godot/imported/peanut_butter.png-f27ef5bd914418a8d85d92abb36518ed.ctex"]
+source_file="res://assets/food assets/ingredients/wet/honey.png"
+dest_files=["res://.godot/imported/honey.png-86fab80fd389736fc881bcb79782e957.ctex"]
 
 [params]
 

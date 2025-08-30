@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv46km0tkjo5j"
-path="res://.godot/imported/jam.png-65c21e9315a816a56bd1d24baf0495fb.ctex"
+uid="uid://j6dianjq1f0q"
+path="res://.godot/imported/vanilla_extract.png-b6c60d925b31f69a4c0aa3623f381bc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/jam.png"
-dest_files=["res://.godot/imported/jam.png-65c21e9315a816a56bd1d24baf0495fb.ctex"]
+source_file="res://assets/food assets/ingredients/wet/vanilla_extract.png"
+dest_files=["res://.godot/imported/vanilla_extract.png-b6c60d925b31f69a4c0aa3623f381bc0.ctex"]
 
 [params]
 

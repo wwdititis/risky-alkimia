@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j6dianjq1f0q"
-path="res://.godot/imported/vanilla_extract.png-153bb85a4c236c83bf7285113b939664.ctex"
+uid="uid://cxclfib6iidra"
+path="res://.godot/imported/chocolate.png-1af1ee63f21b551ec834a488afcfb468.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/vanilla_extract.png"
-dest_files=["res://.godot/imported/vanilla_extract.png-153bb85a4c236c83bf7285113b939664.ctex"]
+source_file="res://assets/food assets/ingredients/wet/chocolate.png"
+dest_files=["res://.godot/imported/chocolate.png-1af1ee63f21b551ec834a488afcfb468.ctex"]
 
 [params]
 

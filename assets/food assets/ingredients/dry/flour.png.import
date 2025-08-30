@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hrvxe4r7wvsw"
-path="res://.godot/imported/honey.png-37761d5015b0f80cf06fb61633a56cf2.ctex"
+uid="uid://cj0maignulkxd"
+path="res://.godot/imported/flour.png-3dc32fd8519d02e3f2cd5639b30e6dc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/honey.png"
-dest_files=["res://.godot/imported/honey.png-37761d5015b0f80cf06fb61633a56cf2.ctex"]
+source_file="res://assets/food assets/ingredients/dry/flour.png"
+dest_files=["res://.godot/imported/flour.png-3dc32fd8519d02e3f2cd5639b30e6dc3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajt4atnxmoe0"
-path="res://.godot/imported/graham_crackers.png-f4629afccd9ad46b6b5507e6c8380a83.ctex"
+uid="uid://betcgeutv0mvf"
+path="res://.godot/imported/cocoa_powder.png-94a077112c541cbd31785a22c2b63c64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/graham_crackers.png"
-dest_files=["res://.godot/imported/graham_crackers.png-f4629afccd9ad46b6b5507e6c8380a83.ctex"]
+source_file="res://assets/food assets/ingredients/dry/cocoa_powder.png"
+dest_files=["res://.godot/imported/cocoa_powder.png-94a077112c541cbd31785a22c2b63c64.ctex"]
 
 [params]
 

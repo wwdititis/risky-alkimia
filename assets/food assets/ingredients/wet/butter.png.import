@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu8ukgwgac2pv"
-path="res://.godot/imported/butter.png-75349f62c12b08f4c29a7fb67f367292.ctex"
+path="res://.godot/imported/butter.png-fa3ba46ef4039aa573755a5d52d69775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/butter.png"
-dest_files=["res://.godot/imported/butter.png-75349f62c12b08f4c29a7fb67f367292.ctex"]
+source_file="res://assets/food assets/ingredients/wet/butter.png"
+dest_files=["res://.godot/imported/butter.png-fa3ba46ef4039aa573755a5d52d69775.ctex"]
 
 [params]
 

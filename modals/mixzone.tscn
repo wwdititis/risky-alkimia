@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmeamloj70opl"]
 
 [ext_resource type="Script" uid="uid://bq21yfn32esic" path="res://scripts/mixzone.gd" id="1_1exfb"]
-[ext_resource type="Texture2D" uid="uid://chk5acgqpvftf" path="res://assets/food assets/ingredients/dough.png" id="3_r6atc"]
+[ext_resource type="Texture2D" uid="uid://chk5acgqpvftf" path="res://assets/food assets/ingredients/wet/dough.png" id="3_r6atc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2l7c"]
 radius = 42.3851

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da14v3nscf5d0"
-path="res://.godot/imported/chocolate_chips.png-c9f8bf6c1caa1ab4bb85e2bab9cd71f8.ctex"
+path="res://.godot/imported/chocolate_chips.png-0d2b4671cf4ea2ed62f19a28b21fdb4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/chocolate_chips.png"
-dest_files=["res://.godot/imported/chocolate_chips.png-c9f8bf6c1caa1ab4bb85e2bab9cd71f8.ctex"]
+source_file="res://assets/food assets/ingredients/wet/chocolate_chips.png"
+dest_files=["res://.godot/imported/chocolate_chips.png-0d2b4671cf4ea2ed62f19a28b21fdb4e.ctex"]
 
 [params]
 

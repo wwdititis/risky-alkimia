@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buhkwu50vxh6j"
-path="res://.godot/imported/cinnamon.png-cd8665766b72ab81ec94a01a14dcbebe.ctex"
+uid="uid://ctd67umixfaj6"
+path="res://.godot/imported/banana.png-9231669c59029fa23f6029af9a52ef9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/cinnamon.png"
-dest_files=["res://.godot/imported/cinnamon.png-cd8665766b72ab81ec94a01a14dcbebe.ctex"]
+source_file="res://assets/food assets/ingredients/wet/banana.png"
+dest_files=["res://.godot/imported/banana.png-9231669c59029fa23f6029af9a52ef9e.ctex"]
 
 [params]
 

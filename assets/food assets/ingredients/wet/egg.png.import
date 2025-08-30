@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctd67umixfaj6"
-path="res://.godot/imported/banana.png-90251ca3f39026da3ea6f60566dc0ec2.ctex"
+uid="uid://cddfr082pb7qo"
+path="res://.godot/imported/egg.png-cc08f560ecbbf86fb4f4fdd570751b44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/banana.png"
-dest_files=["res://.godot/imported/banana.png-90251ca3f39026da3ea6f60566dc0ec2.ctex"]
+source_file="res://assets/food assets/ingredients/wet/egg.png"
+dest_files=["res://.godot/imported/egg.png-cc08f560ecbbf86fb4f4fdd570751b44.ctex"]
 
 [params]
 

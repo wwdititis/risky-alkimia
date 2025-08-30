@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj0maignulkxd"
-path="res://.godot/imported/flour.png-b109883650f32f7a04fe0c5407be312a.ctex"
+uid="uid://d0rodxi1o8gxk"
+path="res://.godot/imported/cream_cheese.png-aba1faea5a17c550ac5af592ccd9f46d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/flour.png"
-dest_files=["res://.godot/imported/flour.png-b109883650f32f7a04fe0c5407be312a.ctex"]
+source_file="res://assets/food assets/ingredients/wet/cream_cheese.png"
+dest_files=["res://.godot/imported/cream_cheese.png-aba1faea5a17c550ac5af592ccd9f46d.ctex"]
 
 [params]
 

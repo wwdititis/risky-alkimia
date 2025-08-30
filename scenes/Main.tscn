@@ -1,17 +1,26 @@
-[gd_scene load_steps=15 format=3 uid="uid://djmsqcrhymdxn"]
+[gd_scene load_steps=24 format=3 uid="uid://djmsqcrhymdxn"]
 
 [ext_resource type="Script" uid="uid://cxjogc4rusfwe" path="res://scripts/phase1.gd" id="1_q8u5g"]
 [ext_resource type="Script" uid="uid://c8eevab6mna25" path="res://scripts/GMtest.gd" id="2_lhr70"]
 [ext_resource type="PackedScene" uid="uid://dfojt66bva862" path="res://modals/ingredients.tscn" id="4_bjd11"]
 [ext_resource type="PackedScene" uid="uid://cmeamloj70opl" path="res://modals/mixzone.tscn" id="4_qmy6f"]
-[ext_resource type="Texture2D" uid="uid://buhkwu50vxh6j" path="res://assets/food assets/ingredients/cinnamon.png" id="5_qmy6f"]
-[ext_resource type="Texture2D" uid="uid://betcgeutv0mvf" path="res://assets/food assets/ingredients/cocoa_powder.png" id="6_mwfav"]
-[ext_resource type="Texture2D" uid="uid://cj0maignulkxd" path="res://assets/food assets/ingredients/flour.png" id="7_3p2gp"]
-[ext_resource type="Texture2D" uid="uid://cajt4atnxmoe0" path="res://assets/food assets/ingredients/graham_crackers.png" id="8_cvmbd"]
-[ext_resource type="Texture2D" uid="uid://c8ow71jmn0map" path="res://assets/food assets/ingredients/sugar.png" id="9_ft6cd"]
-[ext_resource type="Texture2D" uid="uid://ctd67umixfaj6" path="res://assets/food assets/ingredients/banana.png" id="10_bjd11"]
+[ext_resource type="Texture2D" uid="uid://buhkwu50vxh6j" path="res://assets/food assets/ingredients/dry/cinnamon.png" id="6_3p2gp"]
+[ext_resource type="Texture2D" uid="uid://betcgeutv0mvf" path="res://assets/food assets/ingredients/dry/cocoa_powder.png" id="7_cvmbd"]
+[ext_resource type="Texture2D" uid="uid://cj0maignulkxd" path="res://assets/food assets/ingredients/dry/flour.png" id="8_ft6cd"]
+[ext_resource type="Texture2D" uid="uid://cajt4atnxmoe0" path="res://assets/food assets/ingredients/dry/graham_crackers.png" id="9_bb450"]
 [ext_resource type="PackedScene" uid="uid://cf1juv3eambk2" path="res://modals/dice_roll.tscn" id="10_lhr70"]
-[ext_resource type="Texture2D" uid="uid://bu8ukgwgac2pv" path="res://assets/food assets/ingredients/butter.png" id="11_qmy6f"]
+[ext_resource type="Texture2D" uid="uid://c8ow71jmn0map" path="res://assets/food assets/ingredients/dry/sugar.png" id="10_nfivy"]
+[ext_resource type="Texture2D" uid="uid://ctd67umixfaj6" path="res://assets/food assets/ingredients/wet/banana.png" id="11_1iba3"]
+[ext_resource type="Texture2D" uid="uid://bu8ukgwgac2pv" path="res://assets/food assets/ingredients/wet/butter.png" id="12_yxlcp"]
+[ext_resource type="Texture2D" uid="uid://cxclfib6iidra" path="res://assets/food assets/ingredients/wet/chocolate.png" id="13_ebg2g"]
+[ext_resource type="Texture2D" uid="uid://da14v3nscf5d0" path="res://assets/food assets/ingredients/wet/chocolate_chips.png" id="14_2ofn6"]
+[ext_resource type="Texture2D" uid="uid://d0rodxi1o8gxk" path="res://assets/food assets/ingredients/wet/cream_cheese.png" id="15_xa025"]
+[ext_resource type="Texture2D" uid="uid://cddfr082pb7qo" path="res://assets/food assets/ingredients/wet/egg.png" id="16_36rkl"]
+[ext_resource type="Texture2D" uid="uid://hrvxe4r7wvsw" path="res://assets/food assets/ingredients/wet/honey.png" id="17_fs0b5"]
+[ext_resource type="Texture2D" uid="uid://bv46km0tkjo5j" path="res://assets/food assets/ingredients/wet/jam.png" id="18_ma7h6"]
+[ext_resource type="Texture2D" uid="uid://op3hhe7fekk8" path="res://assets/food assets/ingredients/wet/milk.png" id="19_e2s0e"]
+[ext_resource type="Texture2D" uid="uid://ucbgd1qi61t8" path="res://assets/food assets/ingredients/wet/peanut_butter.png" id="20_gsxep"]
+[ext_resource type="Texture2D" uid="uid://j6dianjq1f0q" path="res://assets/food assets/ingredients/wet/vanilla_extract.png" id="21_v0vrg"]
 
 [sub_resource type="Shader" id="Shader_sgp6g"]
 code = "shader_type canvas_item;
@@ -120,7 +129,7 @@ mouse_filter = 2
 
 [node name="dice_roll" parent="." instance=ExtResource("10_lhr70")]
 visible = false
-position = Vector2(1135, 648)
+position = Vector2(700, 684)
 
 [node name="mixzone" parent="." instance=ExtResource("4_qmy6f")]
 position = Vector2(371, 426)
@@ -140,7 +149,7 @@ mouse_filter = 2
 
 [node name="cinnamon" parent="dry/Control" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("5_qmy6f")
+texture = ExtResource("6_3p2gp")
 
 [node name="Control2" type="Control" parent="dry"]
 layout_mode = 2
@@ -150,7 +159,7 @@ mouse_filter = 2
 
 [node name="cocoa" parent="dry/Control2" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("6_mwfav")
+texture = ExtResource("7_cvmbd")
 
 [node name="Control3" type="Control" parent="dry"]
 layout_mode = 2
@@ -160,7 +169,7 @@ mouse_filter = 2
 
 [node name="flour" parent="dry/Control3" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("7_3p2gp")
+texture = ExtResource("8_ft6cd")
 
 [node name="Control4" type="Control" parent="dry"]
 layout_mode = 2
@@ -170,7 +179,7 @@ mouse_filter = 2
 
 [node name="graham" parent="dry/Control4" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("8_cvmbd")
+texture = ExtResource("9_bb450")
 
 [node name="Control5" type="Control" parent="dry"]
 layout_mode = 2
@@ -180,15 +189,15 @@ mouse_filter = 2
 
 [node name="sugar" parent="dry/Control5" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("9_ft6cd")
+texture = ExtResource("10_nfivy")
 
 [node name="wet" type="GridContainer" parent="."]
 visible = false
-offset_left = 1035.0
+offset_left = 931.0
 offset_top = 50.0
 offset_right = 1230.0
-offset_bottom = 373.0
-columns = 2
+offset_bottom = 537.0
+columns = 3
 
 [node name="Control" type="Control" parent="wet"]
 layout_mode = 2
@@ -198,7 +207,7 @@ mouse_filter = 2
 
 [node name="banana" parent="wet/Control" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("10_bjd11")
+texture = ExtResource("11_1iba3")
 
 [node name="Control2" type="Control" parent="wet"]
 layout_mode = 2
@@ -208,7 +217,7 @@ mouse_filter = 2
 
 [node name="butter" parent="wet/Control2" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("11_qmy6f")
+texture = ExtResource("12_yxlcp")
 
 [node name="Control3" type="Control" parent="wet"]
 layout_mode = 2
@@ -216,9 +225,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="flour" parent="wet/Control3" instance=ExtResource("4_bjd11")]
+[node name="chocolate" parent="wet/Control3" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("7_3p2gp")
+texture = ExtResource("13_ebg2g")
 
 [node name="Control4" type="Control" parent="wet"]
 layout_mode = 2
@@ -226,9 +235,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="graham" parent="wet/Control4" instance=ExtResource("4_bjd11")]
+[node name="chips" parent="wet/Control4" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("8_cvmbd")
+texture = ExtResource("14_2ofn6")
 
 [node name="Control5" type="Control" parent="wet"]
 layout_mode = 2
@@ -236,14 +245,74 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="sugar" parent="wet/Control5" instance=ExtResource("4_bjd11")]
+[node name="cream" parent="wet/Control5" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
-texture = ExtResource("9_ft6cd")
+texture = ExtResource("15_xa025")
+
+[node name="Control6" type="Control" parent="wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="egg" parent="wet/Control6" instance=ExtResource("4_bjd11")]
+position = Vector2(50, 50)
+texture = ExtResource("16_36rkl")
+
+[node name="Control7" type="Control" parent="wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="honey" parent="wet/Control7" instance=ExtResource("4_bjd11")]
+position = Vector2(50, 50)
+texture = ExtResource("17_fs0b5")
+
+[node name="Control8" type="Control" parent="wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="jam" parent="wet/Control8" instance=ExtResource("4_bjd11")]
+position = Vector2(50, 50)
+texture = ExtResource("18_ma7h6")
+
+[node name="Control9" type="Control" parent="wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="milk" parent="wet/Control9" instance=ExtResource("4_bjd11")]
+position = Vector2(50, 50)
+texture = ExtResource("19_e2s0e")
+
+[node name="Control10" type="Control" parent="wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="peanut" parent="wet/Control10" instance=ExtResource("4_bjd11")]
+position = Vector2(50, 50)
+texture = ExtResource("20_gsxep")
+
+[node name="Control11" type="Control" parent="wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="vanilla" parent="wet/Control11" instance=ExtResource("4_bjd11")]
+position = Vector2(50, 50)
+texture = ExtResource("21_v0vrg")
 
 [node name="result" type="RichTextLabel" parent="."]
-offset_left = 595.0
-offset_top = 354.0
-offset_right = 872.0
-offset_bottom = 550.0
+offset_left = 550.0
+offset_top = 186.0
+offset_right = 827.0
+offset_bottom = 382.0
 fit_content = true
 scroll_active = false

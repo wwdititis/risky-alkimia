@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://betcgeutv0mvf"
-path="res://.godot/imported/cocoa_powder.png-dbba2168d10674dc31043e8b55d411bd.ctex"
+uid="uid://buhkwu50vxh6j"
+path="res://.godot/imported/cinnamon.png-6e64ec59f52f7da6faadfe824f7f9c66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food assets/ingredients/cocoa_powder.png"
-dest_files=["res://.godot/imported/cocoa_powder.png-dbba2168d10674dc31043e8b55d411bd.ctex"]
+source_file="res://assets/food assets/ingredients/dry/cinnamon.png"
+dest_files=["res://.godot/imported/cinnamon.png-6e64ec59f52f7da6faadfe824f7f9c66.ctex"]
 
 [params]
 
