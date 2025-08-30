@@ -120,14 +120,14 @@ position = Vector2(-50, -112)
 scale = Vector2(0.6995, 0.7)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"dface"
+frame = 5
 
 [node name="d2" type="AnimatedSprite2D" parent="."]
 position = Vector2(50, -112)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_w21ue")
 animation = &"dface"
-frame = 1
-frame_progress = 0.895247
+frame = 5
 
 [node name="dice_before" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e121c")

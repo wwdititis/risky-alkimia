@@ -1,11 +1,15 @@
 extends CharacterBody2D
 class_name DraggablePiece
 
-@export var texture: Texture
+@export var texture: Texture2D
+@export var drop_zone: Node
 
 #flags
 var dragging := false
 var draggable := true
+	
+func _ready():
+	$Sprite2D.texture = texture	
 	
 func _process(delta):
 	if dragging and draggable:
@@ -22,3 +26,8 @@ func _input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		dragging = event.pressed
 		if dragging:
 			global_position = event.position
+			
+func drop_to_zone(drop_zone: Node):
+	# Move item to the drop zone
+	drop_zone.add_child(self)
+	drop_zone.register_drop(self)

@@ -1,9 +1,9 @@
 extends Node
 
-#Preloads modal windows
 var Settings = preload("res://modals/settings.tscn")
 var HowTo = preload("res://modals/instructions.tscn")
 var Credits = preload("res://modals/credits.tscn")
+var Main = preload("res://scenes/Main.tscn")
 
 #Preloads sound effects
 var sfx_hover:= preload("res://assets/sfx/Retro1.wav")
@@ -13,10 +13,11 @@ var bgmusic:= preload("res://assets/sfx/MysticForest.ogg")
 @onready var sfxPlayer := AudioStreamPlayer.new()
 @onready var bgPlayer := AudioStreamPlayer.new()
 
-# Default volumes
-var sfx_volume := 0.05
+var sfx_volume := 0.05 # Default volumes
 var bg_volume := 0.005
 
+var Rolld1 = 0
+var Rolld2 = 0
 var RollResult = 0
 
 func _ready():

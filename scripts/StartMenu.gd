@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_btnstartgame_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/GameLevel.tscn")
+	get_tree().change_scene_to_packed(Globals.Main)
 
 func _on_btnsettings_pressed() -> void:
 	add_child(Globals.Settings.instantiate())
