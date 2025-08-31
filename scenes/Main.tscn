@@ -114,9 +114,10 @@ shader_parameter/pixel_filter = 700.0
 [node name="Main" type="Node"]
 script = ExtResource("1_q8u5g")
 
-[node name="GM" type="Node" parent="." node_paths=PackedStringArray("dice_roll")]
+[node name="GM" type="Node" parent="." node_paths=PackedStringArray("dice_roll", "mixzone")]
 script = ExtResource("2_lhr70")
 dice_roll = NodePath("../dice_roll")
+mixzone = NodePath("../mixzone")
 
 [node name="balatroBg" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_o5qli")
@@ -308,6 +309,19 @@ mouse_filter = 2
 [node name="vanilla" parent="wet/Control11" instance=ExtResource("4_bjd11")]
 position = Vector2(50, 50)
 texture = ExtResource("21_v0vrg")
+
+[node name="LbPhase" type="Label" parent="."]
+offset_left = 684.0
+offset_top = 137.0
+offset_right = 740.0
+offset_bottom = 160.0
+
+[node name="LbHowto" type="Label" parent="."]
+offset_left = 684.0
+offset_top = 159.0
+offset_right = 764.0
+offset_bottom = 182.0
+text = "Add 3 to start"
 
 [node name="result" type="RichTextLabel" parent="."]
 offset_left = 550.0

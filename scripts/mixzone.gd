@@ -1,11 +1,13 @@
 extends Area2D
 
 @export var new_texture: Texture2D
-var dry = 0
+
+var c = 0
 var max_dry := 3
 var max_wet := 4  
 var dropped_dry := []
 var dropped_wet := []
+var dropped := []
 signal signal_mixzone_full
 
 # Called when the node enters the scene tree for the first time.
@@ -15,13 +17,20 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is DraggablePiece:
-		dropped_dry.append(dry+1)
-		dry =+ 1
-		print(dropped_dry)
+		dropped.append(c+1)
+		c = c + 1
+		print(dropped)
 		print("Dropped into zone!")
-		if dropped_dry.size() == max_dry:
+		if dropped.size() == max_dry and Globals.current_phase == 0:
 			emit_signal("signal_mixzone_full")
 			print("DropZone full!")
+			c = 0
+			dropped = []
+		if dropped.size() == max_wet and Globals.current_phase == 2:
+			emit_signal("signal_mixzone_full")
+			print("DropZone full!")
+			c = 0
+			dropped = []
 		# Remove draggable from the scene
 		if new_texture:
 			$Sprite2D.texture = new_texture

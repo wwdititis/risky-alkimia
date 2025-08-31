@@ -16,6 +16,9 @@ var bgmusic:= preload("res://assets/sfx/MysticForest.ogg")
 var sfx_volume := 0.05 # Default volumes
 var bg_volume := 0.005
 
+enum Phase { WAIT, PHASE1, PHASE2, PHASE3 } #STATES
+var current_phase = Phase.WAIT
+
 var Rolld1 = 0
 var Rolld2 = 0
 var RollResult = 0

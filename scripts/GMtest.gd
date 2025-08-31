@@ -1,11 +1,13 @@
 extends Node
 
 @export var dice_roll: Node
+@export var mixzone: Area2D
+
 @onready var result: RichTextLabel = $"../result"
 @onready var dry: GridContainer = $"../dry"
 @onready var wet: GridContainer = $"../wet"
-
-var current_phase = 1
+@onready var LbPhase: Label = $"../LbPhase"
+@onready var LbHowto: Label = $"../LbHowto"
 
 var Ingredients = {
 	"dry": ["cinnamon", "cocoa", "flour", "graham", "sugar"],
@@ -13,45 +15,71 @@ var Ingredients = {
 }
 
 
+
 func _ready():
 	dice_roll.connect("signal_roll", Callable(self, "_on_dice_rolled"))
-	start_phase(1)
-
+	mixzone.connect("signal_mixzone_full", Callable(self, "_on_mixzone_full"))
+		   
 # ------------------ Phase Functions ------------------
 
-func start_phase(n: int):
-	current_phase = n
-	print("Phase: " + str(current_phase))
-	match n:
+func _on_mixzone_full():
+	start_phase(Globals.current_phase+1)
+
+func start_phase(phase):
+	Globals.current_phase = phase
+	LbPhase.text = "Phase: " + str(Globals.current_phase)
+	match phase:
 		1:
 			dice_roll.visible = true
-	
+			dry.visible = false
+			LbHowto.text = "Roll the dice"
+		2:			
+			wet.visible = true
+			dice_roll.visible = false
+			LbHowto.text = "Add 4 to continue"
+		3:
+			dice_roll.visible = true			
+			wet.visible = false
+			LbHowto.text = "Roll the dice"
+		4:		
+			LbHowto.text = "Roll for mixing"		
+		5:		
+			LbHowto.text = "Roll for texture check"	
+		6:		
+			LbHowto.text = "Roll for baking"		
+		7:		
+			LbHowto.text = "Roll for Plating"
+		8:
+			LbHowto.text = "The end"
+			LbPhase.text = ""
+			result.text = ""
+			dice_roll.visible = false			
+			
+
 func _on_dice_rolled():
-	match current_phase:
+	match Globals.current_phase:
 		1:	
-			start_phase(2)
-			print("Phase 1")	
-			result.text = ClassifyRoll()		
+			result.text = ClassifyRoll()
 			print(Globals.Rolld1)
 			print(Globals.Rolld2)
-			current_phase = 2
+			start_phase(2)
 		2:
+			result.text = ClassifyRoll()
 			start_phase(3)
-			print("Phase 2")
-			dry.visible = false
-			wet.visible = true
 		3:
-			start_phase(3)
-			print("Phase 3")
+			result.text = ClassifyRoll()
+			start_phase(4)
 		4:
-			start_phase(3)
-			print("Phase 4")
+			result.text = ClassifyRoll()
+			start_phase(5)
 		5:
-			start_phase(3)
-			print("Phase 5")
+			result.text = ClassifyRoll()
+			start_phase(6)
 		6:
-			start_phase(3)
-			print("Phase 6")
+			result.text = ClassifyRoll()
+			start_phase(7)
+		7:
+			start_phase(8)			
 
 func ClassifyRoll() -> String:
 	var d1 = Globals.Rolld1
