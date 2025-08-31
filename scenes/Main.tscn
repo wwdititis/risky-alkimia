@@ -134,6 +134,7 @@ position = Vector2(700, 684)
 
 [node name="mixzone" parent="." instance=ExtResource("4_qmy6f")]
 position = Vector2(371, 426)
+scale = Vector2(0.5, 0.5)
 
 [node name="dry" type="GridContainer" parent="."]
 offset_left = 1035.0
@@ -311,22 +312,22 @@ position = Vector2(50, 50)
 texture = ExtResource("21_v0vrg")
 
 [node name="LbPhase" type="Label" parent="."]
-offset_left = 684.0
-offset_top = 137.0
-offset_right = 740.0
-offset_bottom = 160.0
+offset_left = 648.0
+offset_top = 97.0
+offset_right = 704.0
+offset_bottom = 120.0
 
 [node name="LbHowto" type="Label" parent="."]
-offset_left = 684.0
-offset_top = 159.0
-offset_right = 764.0
-offset_bottom = 182.0
+offset_left = 628.0
+offset_top = 150.0
+offset_right = 733.0
+offset_bottom = 173.0
 text = "Add 3 to start"
 
 [node name="result" type="RichTextLabel" parent="."]
-offset_left = 550.0
-offset_top = 186.0
-offset_right = 827.0
-offset_bottom = 382.0
+offset_left = 637.0
+offset_top = 244.0
+offset_right = 834.0
+offset_bottom = 499.0
 fit_content = true
 scroll_active = false

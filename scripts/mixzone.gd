@@ -1,7 +1,9 @@
 extends Area2D
 
-@export var new_texture: Texture2D
+@onready var sprite2d: Sprite2D = $Sprite2D
 
+var empty_bowl = "res://assets/food assets/ingredients/empty_bowl.png"
+var flour_bowl = "res://assets/food assets/ingredients/flour_bowl.png"
 var c = 0
 var max_dry := 3
 var max_wet := 4  
@@ -12,7 +14,7 @@ signal signal_mixzone_full
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	sprite2d.texture = load(empty_bowl)
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -26,23 +28,13 @@ func _on_body_entered(body: Node2D) -> void:
 			print("DropZone full!")
 			c = 0
 			dropped = []
+			sprite2d.texture = load(flour_bowl)
 		if dropped.size() == max_wet and Globals.current_phase == 2:
 			emit_signal("signal_mixzone_full")
 			print("DropZone full!")
 			c = 0
 			dropped = []
 		# Remove draggable from the scene
-		if new_texture:
-			$Sprite2D.texture = new_texture
 		body.queue_free()
 		
-#func register_drop(item: Node):
-	#if max_items > 0 and dropped_items.size() >= max_items:
-		#print("DropZone full!")
-		#return
-	#
-	#dropped_items.append(item)
-	#print("Item dropped! Total:", dropped_items.size())
-	#
-	#emit_signal("item_dropped", item)		
 		
